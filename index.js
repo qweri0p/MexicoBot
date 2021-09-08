@@ -41,6 +41,11 @@ client.on('message', message => {
         case 'start':
           start.command(user, message, db);
           break;
+        case 'gh':
+        case 'github':
+        case 'qweriop':
+          hello.gh(message);
+          break;
         default:
           return;
        }
