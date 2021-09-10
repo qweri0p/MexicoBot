@@ -49,8 +49,9 @@ client.on('message', message => {
           break;
         case 'update':
           github.update(message);
+          break;
         default:
-          message.channel.send(`ik begrijp dat niet <!${mesage.author.id}>`);
+          break;
        }
         
 });
