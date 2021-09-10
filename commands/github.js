@@ -5,7 +5,10 @@ function update(message) {
     } else {
         message.channel.send('Only qweriop#0416 can update this bot.');
     }
-
 }
 
-module.exports = { update };
+function gh(message) {
+  message.channel.send("https://github.com/qweri0p/MexicoBot");
+}
+
+module.exports = { update, gh };
