@@ -21,39 +21,39 @@ client.once('ready', () => {
 });
 
 client.on('message', message => {
-  	if (message.author.bot) return;
-        var user = message.author.id
+  if (message.author.bot) return;
+  var user = message.author.id
 	const args = message.content.slice(prefix.length).trim().split(' ');
 	const command = args.shift().toLowerCase();
 
 	console.log(message.content);
-        switch (command) {
-        case 'hello':
-        case 'hallo':
-          hello.command(message); 
-          break; 
-        case 'sex':
-          sex.command(message);
-          break;
-        case 'bal':
-        case 'balance':
-          balance.command(user, message, db);
-          break;
-        case 'start':
-          start.command(user, message, db);
-          break;
-        case 'gh':
-        case 'github':
-        case 'qweriop':
-          github.gh(message);
-          break;
-        case 'update':
-          github.update(message);
-          break;
-        default:
-          break;
-       }
-        
+  switch (command) {
+  case 'hello':
+  case 'hallo':
+    hello.command(message);
+    break;
+  case 'sex':
+    sex.command(message);
+    break;
+  case 'bal':
+  case 'balance':
+    balance.command(user, message, db);
+    break;
+  case 'start':
+    start.command(user, message, db);
+    break;
+  case 'gh':
+  case 'github':
+  case 'qweriop':
+    github.gh(message);
+    break;
+  case 'update':
+    github.update(message);
+    break;
+  default:
+    break;
+  }
+
 });
 
 client.login(process.env.TOKEN);
