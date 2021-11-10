@@ -1,6 +1,6 @@
-function command(user, message, db) {
-  db.get(`seLECt * fRoM Main wheRE User=?`, [user], (err, row) => {
-    if (err) { throw err; }
+function command(message, db) {
+  db.get(`seLECt * fRoM Main wheRE User=?`, [message.author.id], (err, row) => {
+    if (err) { throw err; return;}
     if (row == null) {
       message.channel.send("Use 'Mex start' first.");
       return;

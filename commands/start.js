@@ -1,5 +1,5 @@
-function command(user, message, db) {
-  db.get(`select * from Main where User=?`, [user], (err, row) => {
+function command(message, db) {
+  db.get(`select * from Main where User=?`, [message.author.id], (err, row) => {
     if (err) { throw err; }
     if (row != null) {
       message.channel.send("You already have money.");
