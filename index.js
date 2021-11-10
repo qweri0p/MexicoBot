@@ -15,6 +15,7 @@ const sex = require("./commands/sex.js");
 const balance = require("./commands/balance.js");
 const start = require("./commands/start.js");
 const github = require("./commands/github.js");
+const work = require("./commands/work.js");
 
 client.once('ready', () => {
   console.log("Ready!")
@@ -47,6 +48,10 @@ client.on('message', message => {
       break;
     case 'update':
       github.update(message);
+      break;
+    case 'werk':
+    case 'work':
+      work.command(message, db);
       break;
     default:
       break;
